@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/conversionType">
+
+    <fragment
+        android:id="@+id/conversionType"
+        android:name="com.example.depreciationrateestimator.ConversionType"
+        android:label="fragment_conversion_type"
+        tools:layout="@layout/conversionlayout"
+        >
+        <action
+            android:id="@+id/action_conversionType_to_conversionSheet"
+            app:destination="@id/conversionSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversionSheet"
+        android:name="com.example.depreciationrateestimator.ConversionSheet"
+        android:label="fragment_conversion_sheet"
+        tools:layout="@layout/fragment_conversion_sheet" >
+        <argument
+            android:name="formula"
+            app:argType="string" />
+    </fragment>
+</navigation>

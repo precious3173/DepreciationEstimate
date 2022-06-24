@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ConversionSheet"
+    android:background="@color/black">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+ <Button
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Calculate"
+     android:id="@+id/calculate"
+
+     />
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+  <EditText
+      android:id="@+id/asset_description"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="14sp"
+      android:textColor="@color/white"
+      android:ellipsize="none"
+      android:padding="10dp"
+      android:focusable="false"
+      android:scrollHorizontally="true"
+      android:textStyle="bold"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/cost"
+      app:layout_constraintBottom_toTopOf="@id/asset1"
+      app:layout_constraintStart_toStartOf="parent"
+      android:background="@drawable/background"
+      android:text="@string/asset_description" />
+
+  <EditText
+      android:id="@+id/cost"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="14sp"
+      android:text="@string/cost"
+      android:padding="10dp"
+      android:focusable="false"
+      app:layout_constraintStart_toEndOf="@id/asset_description"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/cost1"
+      app:layout_constraintEnd_toStartOf="@id/useful_life"
+      android:ellipsize="none"
+      android:scrollHorizontally="true"
+      android:background="@drawable/background"
+      android:textColor="@color/white"
+      />
+
+  <EditText
+      android:id="@+id/useful_life"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="14sp"
+      android:ellipsize="none"
+      android:padding="10dp"
+      android:focusable="false"
+      app:layout_constraintStart_toEndOf="@id/cost"
+      app:layout_constraintTop_toTopOf="parent"
+      android:scrollHorizontally="true"
+      app:layout_constraintEnd_toStartOf="@id/residual_value"
+      android:text="@string/Useful_life"
+      app:layout_constraintBottom_toTopOf="@id/useful_life1"
+      android:background="@drawable/background"
+      android:textColor="@color/white"/>
+
+  <EditText
+      android:id="@+id/residual_value"
+      android:layout_width="200dp"
+      android:layout_height="48dp"
+      android:background="@drawable/background"
+      android:focusable="false"
+      android:padding="10dp"
+      android:text="@string/Residual_Value"
+      android:textColor="@color/white"
+      android:textSize="14sp"
+      app:layout_constraintBottom_toTopOf="@id/residual_value1"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date"
+      app:layout_constraintStart_toEndOf="@id/useful_life"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/capitalization_date"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="14sp"
+      android:padding="10dp"
+      android:focusable="false"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toEndOf="@id/residual_value"
+      app:layout_constraintEnd_toStartOf="@+id/end_date"
+      app:layout_constraintBottom_toTopOf="@+id/capitalization_date1"
+      android:text="@string/Capitalization_date" />
+
+
+  <EditText
+      android:id="@+id/end_date"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:padding="10dp"
+      android:textSize="14sp"
+      android:focusable="false"
+      android:background="@drawable/background"
+      android:text="@string/End_Date"
+      android:textColor="@color/white"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/depreciation_rate"
+      app:layout_constraintBottom_toTopOf="@+id/end_date1"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_rate"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="14sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      android:text="@string/Depreciation_rate"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toEndOf="@id/end_date"
+      app:layout_constraintEnd_toStartOf="@+id/depreciation_expense"
+     app:layout_constraintBottom_toTopOf="@+id/depreciation_rate1"
+      />
+  <EditText
+      android:id="@+id/depreciation_expense"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="14sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      android:text="@string/Depreciation_expense"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/depreciation_expense1"
+      />
+
+  <EditText
+      android:id="@+id/asset1"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost1"
+      app:layout_constraintTop_toBottomOf="@id/asset_description"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost1"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset1"
+      app:layout_constraintEnd_toStartOf="@id/useful_life1"
+      app:layout_constraintTop_toBottomOf="@id/cost"/>
+
+  <EditText
+      android:id="@+id/useful_life1"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost1"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value1"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value1"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value"
+      app:layout_constraintStart_toEndOf="@id/useful_life1"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date1"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date1"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:focusable="false"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date"
+      app:layout_constraintStart_toEndOf="@id/residual_value1"
+      app:layout_constraintEnd_toStartOf="@id/end_date1"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date1"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date1"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate1"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate1"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense1"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate"
+      app:layout_constraintStart_toEndOf="@id/end_date1"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense1"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate1"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+  <EditText
+      android:id="@+id/asset2"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost2"
+      app:layout_constraintTop_toBottomOf="@id/asset1"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost2"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset2"
+      app:layout_constraintEnd_toStartOf="@id/useful_life2"
+      app:layout_constraintTop_toBottomOf="@id/cost1"/>
+
+  <EditText
+      android:id="@+id/useful_life2"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life1"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost2"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value2"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/residual_value2"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:background="@drawable/background"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:textSize="16sp"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date2"
+      app:layout_constraintStart_toEndOf="@id/useful_life2"
+      app:layout_constraintTop_toBottomOf="@id/residual_value1" />
+
+  <EditText
+      android:id="@+id/capitalization_date2"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date1"
+      app:layout_constraintStart_toEndOf="@id/residual_value2"
+      app:layout_constraintEnd_toStartOf="@id/end_date2"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date2"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date1"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date2"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate2"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate2"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense2"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate1"
+      app:layout_constraintStart_toEndOf="@id/end_date2"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense2"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate2"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+  <EditText
+      android:id="@+id/asset3"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost3"
+      app:layout_constraintTop_toBottomOf="@id/asset2"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost3"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset3"
+      app:layout_constraintEnd_toStartOf="@id/useful_life3"
+      app:layout_constraintTop_toBottomOf="@id/cost2"/>
+
+  <EditText
+      android:id="@+id/useful_life3"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life2"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost3"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value3"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value3"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value2"
+      app:layout_constraintStart_toEndOf="@id/useful_life3"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date3"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date3"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date2"
+      app:layout_constraintStart_toEndOf="@id/residual_value3"
+      app:layout_constraintEnd_toStartOf="@id/end_date3"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date3"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date2"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date3"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate3"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate3"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense3"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate2"
+      app:layout_constraintStart_toEndOf="@id/end_date3"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense3"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate3"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+  <EditText
+      android:id="@+id/asset4"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost4"
+      app:layout_constraintTop_toBottomOf="@id/asset3"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost4"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset4"
+      app:layout_constraintEnd_toStartOf="@id/useful_life4"
+      app:layout_constraintTop_toBottomOf="@id/cost3"/>
+
+  <EditText
+      android:id="@+id/useful_life4"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life3"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost4"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value4"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value4"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value3"
+      app:layout_constraintStart_toEndOf="@id/useful_life4"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date4"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date4"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date3"
+      app:layout_constraintStart_toEndOf="@id/residual_value4"
+      app:layout_constraintEnd_toStartOf="@id/end_date4"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date4"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date3"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date4"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate4"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate4"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense4"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate3"
+      app:layout_constraintStart_toEndOf="@id/end_date4"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense4"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense3"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate4"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+  <EditText
+      android:id="@+id/asset5"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost5"
+      app:layout_constraintTop_toBottomOf="@id/asset4"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost5"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset5"
+      app:layout_constraintEnd_toStartOf="@id/useful_life5"
+      app:layout_constraintTop_toBottomOf="@id/cost4"/>
+
+  <EditText
+      android:id="@+id/useful_life5"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life4"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost5"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value5"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value5"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value4"
+      app:layout_constraintStart_toEndOf="@id/useful_life5"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date5"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date5"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date4"
+      app:layout_constraintStart_toEndOf="@id/residual_value5"
+      app:layout_constraintEnd_toStartOf="@id/end_date5"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date5"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date4"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date5"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate5"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate5"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense5"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate4"
+      app:layout_constraintStart_toEndOf="@id/end_date5"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense5"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate5"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+  <EditText
+      android:id="@+id/asset6"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost6"
+      app:layout_constraintTop_toBottomOf="@id/asset5"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost6"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset6"
+      app:layout_constraintEnd_toStartOf="@id/useful_life6"
+      app:layout_constraintTop_toBottomOf="@id/cost5"/>
+
+  <EditText
+      android:id="@+id/useful_life6"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life5"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost6"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value6"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value6"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value5"
+      app:layout_constraintStart_toEndOf="@id/useful_life6"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date6"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date6"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date5"
+      app:layout_constraintStart_toEndOf="@id/residual_value6"
+      app:layout_constraintEnd_toStartOf="@id/end_date6"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date6"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date5"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date6"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate6"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate6"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense6"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate5"
+      app:layout_constraintStart_toEndOf="@id/end_date6"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense6"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense5"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate6"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+  <EditText
+      android:id="@+id/asset7"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost7"
+      app:layout_constraintTop_toBottomOf="@id/asset6"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost7"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset7"
+      app:layout_constraintEnd_toStartOf="@id/useful_life7"
+      app:layout_constraintTop_toBottomOf="@id/cost6"/>
+
+  <EditText
+      android:id="@+id/useful_life7"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life6"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost7"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value7"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value7"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value6"
+      app:layout_constraintStart_toEndOf="@id/useful_life7"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date7"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date7"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date6"
+      app:layout_constraintStart_toEndOf="@id/residual_value7"
+      app:layout_constraintEnd_toStartOf="@id/end_date7"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date7"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date6"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date7"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate7"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate7"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense7"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate6"
+      app:layout_constraintStart_toEndOf="@id/end_date7"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense7"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense6"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate7"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+  <EditText
+      android:id="@+id/asset8"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost8"
+      app:layout_constraintTop_toBottomOf="@id/asset7"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost8"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset8"
+      app:layout_constraintEnd_toStartOf="@id/useful_life8"
+      app:layout_constraintTop_toBottomOf="@id/cost7"/>
+
+  <EditText
+      android:id="@+id/useful_life8"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life7"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost8"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value8"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value8"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value7"
+      app:layout_constraintStart_toEndOf="@id/useful_life8"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date8"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date8"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date7"
+      app:layout_constraintStart_toEndOf="@id/residual_value8"
+      app:layout_constraintEnd_toStartOf="@id/end_date8"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date8"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date7"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date8"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate8"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate8"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense8"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate7"
+      app:layout_constraintStart_toEndOf="@id/end_date8"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense8"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense7"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate8"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+  <EditText
+      android:id="@+id/asset9"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost9"
+      app:layout_constraintTop_toBottomOf="@id/asset8"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost9"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset9"
+      app:layout_constraintEnd_toStartOf="@id/useful_life9"
+      app:layout_constraintTop_toBottomOf="@id/cost8"/>
+
+  <EditText
+      android:id="@+id/useful_life9"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life8"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost9"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value9"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value9"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value8"
+      app:layout_constraintStart_toEndOf="@id/useful_life9"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date9"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date9"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date8"
+      app:layout_constraintStart_toEndOf="@id/residual_value9"
+      app:layout_constraintEnd_toStartOf="@id/end_date9"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date9"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date8"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date9"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate9"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate9"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense9"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate8"
+      app:layout_constraintStart_toEndOf="@id/end_date9"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense9"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense8"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate9"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+  <EditText
+      android:id="@+id/asset10"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/cost10"
+      app:layout_constraintTop_toBottomOf="@id/asset9"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/cost10"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:inputType="number"
+      android:background="@drawable/background"
+      app:layout_constraintStart_toEndOf="@id/asset10"
+      app:layout_constraintEnd_toStartOf="@id/useful_life10"
+      app:layout_constraintTop_toBottomOf="@id/cost9"/>
+
+  <EditText
+      android:id="@+id/useful_life10"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@id/useful_life9"
+      android:padding="10dp"
+      app:layout_constraintStart_toEndOf="@id/cost10"
+      android:inputType="number"
+      app:layout_constraintEnd_toStartOf="@id/residual_value10"
+      android:textColor="@color/white"
+      android:background="@drawable/background" />
+  <EditText
+      android:id="@+id/residual_value10"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:inputType="number"
+      app:layout_constraintTop_toBottomOf="@id/residual_value9"
+      app:layout_constraintStart_toEndOf="@id/useful_life10"
+      app:layout_constraintEnd_toStartOf="@id/capitalization_date10"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/capitalization_date10"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/capitalization_date9"
+      app:layout_constraintStart_toEndOf="@id/residual_value10"
+      app:layout_constraintEnd_toStartOf="@id/end_date10"
+      android:background="@drawable/background" />
+
+
+  <EditText
+      android:id="@+id/end_date10"
+      android:layout_width="100dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/end_date9"
+      app:layout_constraintStart_toEndOf="@id/capitalization_date10"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_rate10"
+      android:textColor="@color/white"
+      android:background="@drawable/background"/>
+
+
+  <EditText
+      android:id="@+id/depreciation_rate10"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      app:layout_constraintEnd_toStartOf="@id/depreciation_expense10"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_rate9"
+      app:layout_constraintStart_toEndOf="@id/end_date10"
+      />
+
+  <EditText
+      android:id="@+id/depreciation_expense10"
+      android:layout_width="200dp"
+      android:layout_height="50dp"
+      android:textSize="16sp"
+      android:padding="10dp"
+      app:layout_constraintTop_toBottomOf="@id/depreciation_expense9"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/depreciation_rate10"
+      android:textColor="@color/white"
+      android:background="@drawable/background"
+      />
+
+ </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

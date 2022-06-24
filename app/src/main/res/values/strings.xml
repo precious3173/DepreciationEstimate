@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DepreciationEstimator</string>
+
+    <string name="about">Determine the depreciation Expense and rate of assets using different depreciation methods</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="asset_description">Asset</string>
+    <string name="cost">Cost</string>
+    <string name="Useful_life">Useful Life</string>
+    <string name="Residual_Value">Salvage Value</string>
+    <string name="Capitalization_date">Start Date</string>
+    <string name="End_Date">End Date</string>
+    <string name="Depreciation_rate">Rate</string>
+    <string name="Depreciation_expense">Dep Expense</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
