@@ -1,6 +1,7 @@
 package com.example.depreciationrateestimator;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,15 +13,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
+import androidx.fragment.app.DialogFragment;
 
-public class CustomDialogue extends AppCompatDialogFragment {
+public class CustomDialogue extends DialogFragment {
 DatePicker picker;
-String date;
-CapitalizationDate capitalizationDate;
-    
-    @NonNull
-    @Override
+public CapitalizationDate capitalizationDate;
+
+
+
+    @NonNull    @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
@@ -41,16 +45,22 @@ CapitalizationDate capitalizationDate;
                 int month  = picker.getMonth();
                 int year = picker.getYear();
                 int day = picker.getDayOfMonth();
-                date = (month + 1) + "/" + day + "/" + year;
-                capitalizationDate.capitalizateDat(date);
+                String date = (month + 1) + "/" + day + "/" + year;
+                capitalizationDate.capitalize(date);
 
             }
         });
         
         return builder.create();
     }
+  /*  @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+       try{ capitalizationDate = (CapitalizationDate) context;}
+       catch (ClassCastException e) {
+           throw new ClassCastException(getActivity().toString() + "Implement dialog");
+       }
 
-    public interface CapitalizationDate {
-        void capitalizateDat (String date);
-    }
+    } */
+
 }

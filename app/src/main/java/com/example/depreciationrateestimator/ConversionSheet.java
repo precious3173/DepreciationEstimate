@@ -1,5 +1,7 @@
 package com.example.depreciationrateestimator;
 
+import android.app.DatePickerDialog;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class ConversionSheet extends Fragment implements CustomDialogue.CapitalizationDate {
+public class ConversionSheet extends Fragment implements DatePickerDialog.OnDateSetListener {
 EditText usefulLife1, usefulLife2, usefulLife3, usefulLife4, usefulLife5, usefulLife6, usefulLife7,
         usefulLife8, usefulLife9, usefulLife10,
 
@@ -128,17 +130,23 @@ Button calculate;
                         @Override
                         public void onClick(View view) {
 
-                         CustomDialogue customDialogue = new CustomDialogue();
-                         customDialogue.show(getActivity().getSupportFragmentManager(), "Capitalization Date");
+                            pickDate();
+
+                         // CustomDialogue customDialogue = new CustomDialogue();
+                        // customDialogue.show(getActivity().getSupportFragmentManager(), "");
                         }
                     });
+
 
                     calculate.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
 
-                                if ( !usefulLife1.getText().toString().isEmpty() && !cost1.getText().toString().isEmpty() && !residual1.getText().toString().isEmpty()) {
+                                if ( !usefulLife1.getText().toString().isEmpty() && !cost1.getText().toString().isEmpty()) {
+                                   if (residual1.getText().toString().isEmpty()){
 
+
+                                   }else {
                                   costToString = Double.parseDouble(cost1.getText().toString());
                                   residualToString = Double.parseDouble(residual1.getText().toString());
 
@@ -150,7 +158,7 @@ Button calculate;
 
                                      depreciationExpense1.setText(String.valueOf(depreciationE1) );
 
-                                     depreciationRate1.setText(String.valueOf(depreciationR1));
+                                     depreciationRate1.setText(String.valueOf(depreciationR1));}
                                  }
                                   if ( !usefulLife2.getText().toString().isEmpty() && !cost2.getText().toString().isEmpty()) {
                                       double  costToString = Double.parseDouble(cost2.getText().toString());
@@ -206,7 +214,7 @@ Button calculate;
                     }
             });
                     break;
- 
+
                 case "Sum-of-the-years'-digits":
                     Toast.makeText(getContext(), "2+2", Toast.LENGTH_SHORT).show();
                     break;
@@ -225,10 +233,30 @@ Button calculate;
         return v;
     }
 
-    @Override
-    public void capitalizateDat(String date) {
+    private void pickDate() {
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+
+        datePickerDialog.show();
+    }
+
+   /* @Override
+    public void capitalize(String date) {
         if (date != null) {
             startDate1.setText(date);
+        } else {
+
+            Toast.makeText(getContext(), "Select date", Toast.LENGTH_SHORT).show();
         }
+    }*/
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+       String date = (i1 + 1) + "/" + i2 + "/" + i;
+       startDate1.setText(date);
     }
 }
