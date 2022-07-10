@@ -20,20 +20,13 @@
     android:orientation="vertical">
 
 
- <Button
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:text="Calculate"
-     android:id="@+id/calculate"
-
-     />
 
  <androidx.constraintlayout.widget.ConstraintLayout
      android:layout_width="match_parent"
      android:layout_height="wrap_content">
   <EditText
       android:id="@+id/asset_description"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="14sp"
       android:textColor="@color/white"
@@ -51,7 +44,7 @@
 
   <EditText
       android:id="@+id/cost"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="14sp"
       android:text="@string/cost"
@@ -69,7 +62,7 @@
 
   <EditText
       android:id="@+id/useful_life"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="14sp"
       android:ellipsize="none"
@@ -86,8 +79,8 @@
 
   <EditText
       android:id="@+id/residual_value"
-      android:layout_width="200dp"
-      android:layout_height="48dp"
+      android:layout_width="250dp"
+      android:layout_height="50dp"
       android:background="@drawable/background"
       android:focusable="false"
       android:padding="10dp"
@@ -101,7 +94,7 @@
 
   <EditText
       android:id="@+id/capitalization_date"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="14sp"
       android:padding="10dp"
@@ -117,7 +110,7 @@
 
   <EditText
       android:id="@+id/end_date"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:padding="10dp"
       android:textSize="14sp"
@@ -133,11 +126,12 @@
 
   <EditText
       android:id="@+id/depreciation_rate"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="14sp"
       android:textColor="@color/white"
       android:padding="10dp"
+      android:focusable="false"
       android:background="@drawable/background"
       android:text="@string/Depreciation_rate"
       app:layout_constraintTop_toTopOf="parent"
@@ -147,7 +141,7 @@
       />
   <EditText
       android:id="@+id/depreciation_expense"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="14sp"
       android:textColor="@color/white"
@@ -162,7 +156,7 @@
 
   <EditText
       android:id="@+id/asset1"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -175,7 +169,7 @@
 
   <EditText
       android:id="@+id/cost1"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -188,7 +182,7 @@
 
   <EditText
       android:id="@+id/useful_life1"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life"
@@ -200,7 +194,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value1"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -214,10 +208,9 @@
 
   <EditText
       android:id="@+id/capitalization_date1"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
-      android:focusable="false"
       android:textColor="@color/white"
       app:layout_constraintTop_toBottomOf="@id/capitalization_date"
       app:layout_constraintStart_toEndOf="@id/residual_value1"
@@ -227,7 +220,7 @@
 
   <EditText
       android:id="@+id/end_date1"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -240,7 +233,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate1"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -253,7 +246,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense1"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -266,7 +259,7 @@
 
   <EditText
       android:id="@+id/asset2"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -279,7 +272,7 @@
 
   <EditText
       android:id="@+id/cost2"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -292,7 +285,7 @@
 
   <EditText
       android:id="@+id/useful_life2"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life1"
@@ -306,7 +299,7 @@
 
   <EditText
       android:id="@+id/residual_value2"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:background="@drawable/background"
       android:padding="10dp"
@@ -319,7 +312,7 @@
 
   <EditText
       android:id="@+id/capitalization_date2"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -331,7 +324,7 @@
 
   <EditText
       android:id="@+id/end_date2"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -344,7 +337,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate2"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -357,7 +350,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense2"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -370,7 +363,7 @@
 
   <EditText
       android:id="@+id/asset3"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -383,7 +376,7 @@
 
   <EditText
       android:id="@+id/cost3"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -396,7 +389,7 @@
 
   <EditText
       android:id="@+id/useful_life3"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life2"
@@ -408,7 +401,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value3"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -422,7 +415,7 @@
 
   <EditText
       android:id="@+id/capitalization_date3"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -434,7 +427,7 @@
 
   <EditText
       android:id="@+id/end_date3"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -447,7 +440,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate3"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -460,7 +453,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense3"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -473,7 +466,7 @@
 
   <EditText
       android:id="@+id/asset4"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -486,7 +479,7 @@
 
   <EditText
       android:id="@+id/cost4"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -499,7 +492,7 @@
 
   <EditText
       android:id="@+id/useful_life4"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life3"
@@ -511,7 +504,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value4"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -525,7 +518,7 @@
 
   <EditText
       android:id="@+id/capitalization_date4"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -537,7 +530,7 @@
 
   <EditText
       android:id="@+id/end_date4"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -550,7 +543,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate4"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -563,7 +556,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense4"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -576,7 +569,7 @@
 
   <EditText
       android:id="@+id/asset5"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -589,7 +582,7 @@
 
   <EditText
       android:id="@+id/cost5"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -602,7 +595,7 @@
 
   <EditText
       android:id="@+id/useful_life5"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life4"
@@ -614,7 +607,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value5"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -628,7 +621,7 @@
 
   <EditText
       android:id="@+id/capitalization_date5"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -640,7 +633,7 @@
 
   <EditText
       android:id="@+id/end_date5"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -653,7 +646,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate5"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -666,7 +659,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense5"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -679,7 +672,7 @@
 
   <EditText
       android:id="@+id/asset6"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -692,7 +685,7 @@
 
   <EditText
       android:id="@+id/cost6"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -705,7 +698,7 @@
 
   <EditText
       android:id="@+id/useful_life6"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life5"
@@ -717,7 +710,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value6"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -731,7 +724,7 @@
 
   <EditText
       android:id="@+id/capitalization_date6"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -743,7 +736,7 @@
 
   <EditText
       android:id="@+id/end_date6"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -756,7 +749,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate6"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -769,7 +762,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense6"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -781,7 +774,7 @@
       />
   <EditText
       android:id="@+id/asset7"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -794,7 +787,7 @@
 
   <EditText
       android:id="@+id/cost7"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -807,7 +800,7 @@
 
   <EditText
       android:id="@+id/useful_life7"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life6"
@@ -819,7 +812,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value7"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -833,7 +826,7 @@
 
   <EditText
       android:id="@+id/capitalization_date7"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -845,7 +838,7 @@
 
   <EditText
       android:id="@+id/end_date7"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -858,7 +851,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate7"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -871,7 +864,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense7"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -883,7 +876,7 @@
       />
   <EditText
       android:id="@+id/asset8"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -896,7 +889,7 @@
 
   <EditText
       android:id="@+id/cost8"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -909,7 +902,7 @@
 
   <EditText
       android:id="@+id/useful_life8"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life7"
@@ -921,7 +914,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value8"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -935,7 +928,7 @@
 
   <EditText
       android:id="@+id/capitalization_date8"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -947,7 +940,7 @@
 
   <EditText
       android:id="@+id/end_date8"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -960,7 +953,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate8"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -973,7 +966,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense8"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -986,7 +979,7 @@
 
   <EditText
       android:id="@+id/asset9"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -999,7 +992,7 @@
 
   <EditText
       android:id="@+id/cost9"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -1012,7 +1005,7 @@
 
   <EditText
       android:id="@+id/useful_life9"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life8"
@@ -1024,7 +1017,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value9"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1038,7 +1031,7 @@
 
   <EditText
       android:id="@+id/capitalization_date9"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -1050,7 +1043,7 @@
 
   <EditText
       android:id="@+id/end_date9"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1063,7 +1056,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate9"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1076,7 +1069,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense9"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1088,7 +1081,7 @@
       />
   <EditText
       android:id="@+id/asset10"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -1101,7 +1094,7 @@
 
   <EditText
       android:id="@+id/cost10"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -1114,7 +1107,7 @@
 
   <EditText
       android:id="@+id/useful_life10"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       app:layout_constraintTop_toBottomOf="@id/useful_life9"
@@ -1126,7 +1119,7 @@
       android:background="@drawable/background" />
   <EditText
       android:id="@+id/residual_value10"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1140,7 +1133,7 @@
 
   <EditText
       android:id="@+id/capitalization_date10"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:textColor="@color/white"
@@ -1152,7 +1145,7 @@
 
   <EditText
       android:id="@+id/end_date10"
-      android:layout_width="100dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1165,7 +1158,7 @@
 
   <EditText
       android:id="@+id/depreciation_rate10"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
@@ -1178,7 +1171,7 @@
 
   <EditText
       android:id="@+id/depreciation_expense10"
-      android:layout_width="200dp"
+      android:layout_width="250dp"
       android:layout_height="50dp"
       android:textSize="16sp"
       android:padding="10dp"
